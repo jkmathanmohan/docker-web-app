@@ -33,7 +33,9 @@ pipeline {
       }
     }
     stage (‘Deploy’) {
+      steps{
     sh "ssh ubuntu@10.0.1.46 mkdir -p /var/www/temp_deploy"
+    }
     }
   }
 }
