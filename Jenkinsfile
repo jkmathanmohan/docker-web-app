@@ -34,7 +34,7 @@ pipeline {
     }
     stage ('Deploy') {
       steps{
-       sh "ssh  ubuntu@10.0.1.46 sudo mkdir -p /var/www/temp_deploy"
+       sh "ssh  ubuntu@10.0.1.46 sudo docker run -d --name mytestproject -p 8080:8080 $registry:$BUILD_NUMBER"
     }
     }
   }
