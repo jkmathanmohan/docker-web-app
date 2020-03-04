@@ -32,10 +32,10 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage ('Deploy') {
-      steps{
-    sh "ssh -i /home/ubuntu/test-aws-key.pem ubuntu@10.0.1.46 mkdir -p /var/www/temp_deploy"
-    }
-    }
+//    stage ('Deploy') {
+ //     steps{
+ //   sh "ssh -i /home/ubuntu/test-aws-key.pem ubuntu@10.0.1.46 mkdir -p /var/www/temp_deploy"
+  //  }
+   // }
   }
 }
