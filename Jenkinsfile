@@ -32,8 +32,9 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    stage (‘Deploy’) {
+    stage ('Deploy') {
       steps{
+    sh "su jenkins"
     sh "ssh ubuntu@10.0.1.46 mkdir -p /var/www/temp_deploy"
     }
     }
