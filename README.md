@@ -1,4 +1,4 @@
-# CI/CD docker-web-app sample project workflow 
+# CI/CD docker-web-app sample project 
 
 Step1:- Clone the git repository
 # git clone
