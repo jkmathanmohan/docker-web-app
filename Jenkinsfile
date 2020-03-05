@@ -49,7 +49,7 @@ pipeline {
         always {
            emailext (
       subject: '$registry:$BUILD_NUMBER', 
-     mimetype: 'text/html', 
+ //    mimetype: 'text/html', 
      to: 'jkmathanmohan@gmail.com',
      recipientProviders: [[$class: 'CulpritsRecipientProvider'],[$class: 'RequesterRecipientProvider']], 
      body: 'A Docker Deploy Complete'
