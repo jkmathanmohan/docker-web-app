@@ -48,7 +48,7 @@ pipeline {
       post {
         always {
            emailext (
-      subject: '$registry:$BUILD_NUMBER', 
+      subject: 'docker image build:$BUILD_NUMBER', 
  //    mimetype: 'text/html', 
      to: 'jkmathanmohan@gmail.com',
      recipientProviders: [[$class: 'CulpritsRecipientProvider'],[$class: 'RequesterRecipientProvider']], 
