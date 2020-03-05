@@ -6,12 +6,14 @@ pipeline {
   }
   agent any
   stages {
+   //Git Cloning from github
     stage('Cloning Git') {
       steps {
         git 'https://github.com/jkmathanmohan/docker-web-app.git'
       }
     }
     stage('Building image') {
+      //Build docker image 
       steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
@@ -19,6 +21,7 @@ pipeline {
       }
     }
     stage('Deploy Image') {
+      //Push the docker image to dockerhub
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
@@ -28,11 +31,13 @@ pipeline {
       }
     }
     stage('Remove Unused docker image') {
+      //Remove Unused docker images
       steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
     stage ('Deploy') {
+      //Deploy the docker image into EC2 instance
       steps{
         sh "ssh  ubuntu@10.0.1.46 sudo docker stop mytestproject"
         sh "ssh  ubuntu@10.0.1.46 sudo docker rm mytestproject"
