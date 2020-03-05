@@ -37,7 +37,7 @@ pipeline {
         sh "ssh  ubuntu@10.0.1.46 sudo docker stop mytestproject && docker rm mytestproject"
         sh "ssh  ubuntu@10.0.1.46 sudo docker pull $registry:$BUILD_NUMBER"
         sh "ssh  ubuntu@10.0.1.46 sudo docker run -d --name mytestproject -p 8080:8080 $registry:$BUILD_NUMBER"
-    }
+      }
     }
   }
 }
