@@ -44,11 +44,18 @@ pipeline {
         sh "ssh  ubuntu@10.0.1.46 sudo docker pull $registry:$BUILD_NUMBER"
         sh "ssh  ubuntu@10.0.1.46 sudo docker run -d --name mytestproject -p 8080:8080 $registry:$BUILD_NUMBER"
       }
+      //email notification
       post {
         always {
-            emailext body: 'A Docker Deploy Complete', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: '$registry:$BUILD_NUMBER'
-        }
+           emailext (
+      subject: $registry:$BUILD_NUMBER, 
+     mimetype: 'text/html', 
+     to: 'jkmathanmohan@gmail.com',
+     recipientProviders: [[$class: 'CulpritsRecipientProvider'],[$class: 'RequesterRecipientProvider']], 
+     body: A Docker Deploy Complete
+    )
       }
+     }
     }
   }
 }
