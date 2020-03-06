@@ -14,11 +14,11 @@ Step2:- Modify the server.js file and commit it
 
 # git push origin master
 
-Step3:- This will trigger the build and connect to jenkins throgh webhook
+Step3:- This will trigger the build and connect to jenkins through webhook
 
-Step4:- Bulid the docker image and send the to the dockerhub.com registory
+Step4:- Build the docker image and send the to the dockerhub.com registry
 
-Step5:- Pull the docker latest image from the dockerhub.com registory and deploy it to web server ec2 instance
+Step5:- Pull the docker latest image from the dockerhub.com registry and deploy it to web server ec2 instance
 
 Step6:- View the result web page
 
