@@ -1,17 +1,22 @@
-# CI/CD docker-web-app sample project 
+CI/CD docker-web-app sample project
 
 Step1:- Clone the git repository
-# git clone
+
+# git clone https://github.com/jkmathanmohan/docker-web-app.git
 
 Step2:- Modify the server.js file and commit it
+
 # git status
+
 # git add src/server.js
-# git commit -m "testing the node js web server in docker"
+
+# git commit -m "testing the node js web app in docker"
+
 # git push origin master
 
-Step3:- This will trigger the buld and connect to jenkins throug webhook 
+Step3:- This will trigger the build and connect to jenkins throgh webhook
 
-Step4:- Buld the docker image and send the to the dockerhub.com registory
+Step4:- Bulid the docker image and send the to the dockerhub.com registory
 
 Step5:- Pull the docker latest image from the dockerhub.com registory and deploy it to web server ec2 instance
 
